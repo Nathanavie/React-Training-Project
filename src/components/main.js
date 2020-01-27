@@ -1,4 +1,5 @@
 import React from 'react';
+import GetJoke from './getJoke';
 
 class Main extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ render() {
   if (!this.state.isLoaded) {
     return (
       <section>
-        <button onClick={this.fetchJoke}>Get Joke</button>
+        <GetJoke function={this.fetchJoke} />
       </section>
     )
   }
@@ -35,7 +36,7 @@ render() {
       <section>
         <p>{this.state.joke.setup}</p>
         <p>{this.state.joke.delivery}</p>
-                <button onClick={this.fetchJoke}>Get Joke</button>
+                <GetJoke function={this.fetchJoke} />
       </section>
     )
   }
@@ -43,7 +44,7 @@ render() {
     return (
     <section>
       <h1>{this.state.joke.joke}</h1>
-      <button onClick={this.fetchJoke}>Get Joke</button>
+        <GetJoke function={this.fetchJoke} />
     </section>
     )
   }
